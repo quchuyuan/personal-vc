@@ -1,0 +1,24 @@
+# Claude Code local settings
+.claude/
+memory/
+
+# Design source bundle (reference only — not for deployment)
+design_files/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel
