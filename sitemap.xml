@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://karlqu.com/</loc>
+    <loc>https://karlqu.space/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://karlqu.com/notes/ten-minute-diligence</loc>
+    <loc>https://karlqu.space/notes/ten-minute-diligence</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

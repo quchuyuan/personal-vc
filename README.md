@@ -49,6 +49,8 @@ Two steps, one minute:
 
 `cleanUrls` is on in `vercel.json`, so `/notes/your-slug.html` is served at `/notes/your-slug`.
 
+Production domain: **https://karlqu.space**
+
 ## Structure
 
 - `index.html` — homepage; notes list is data-driven from inline JSON
@@ -58,7 +60,5 @@ Two steps, one minute:
 - `og.svg` — Open Graph share image (1200×630)
 - `robots.txt`, `sitemap.xml` — crawler directives
 - `vercel.json` — clean URL config
-
-> **Before first deploy:** find-and-replace `https://karlqu.com` throughout `index.html`, `notes/*.html`, `sitemap.xml`, and `robots.txt` with your actual production domain.
 
 `design_files/` (gitignored) holds the original Claude Design source bundle locally.
