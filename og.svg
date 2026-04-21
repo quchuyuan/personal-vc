@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Karl Qu — VC Scout">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f5f3" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#f5f5f3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <g stroke="#1f1f1f" stroke-width="1">
+    <line x1="0"  y1="80"  x2="1200" y2="80"/>
+    <line x1="0"  y1="160" x2="1200" y2="160"/>
+    <line x1="0"  y1="240" x2="1200" y2="240"/>
+    <line x1="0"  y1="320" x2="1200" y2="320"/>
+    <line x1="0"  y1="400" x2="1200" y2="400"/>
+    <line x1="0"  y1="480" x2="1200" y2="480"/>
+    <line x1="0"  y1="560" x2="1200" y2="560"/>
+    <line x1="80"   y1="0" x2="80"   y2="630"/>
+    <line x1="1120" y1="0" x2="1120" y2="630"/>
+  </g>
+
+  <rect x="0" y="0" width="900" height="360" fill="url(#glow)"/>
+
+  <rect x="80" y="80" width="60" height="60" stroke="#2a2a2a" fill="#111111" rx="2"/>
+  <text x="110" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="500" fill="#f5f5f3" text-anchor="middle">KQ</text>
+  <text x="160" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#a3a3a0" letter-spacing="1">KARL QU</text>
+  <text x="160" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#6b6b68">VC SCOUT · SF</text>
+
+  <text x="80" y="340" font-family="'Inter Tight', ui-sans-serif, system-ui, sans-serif" font-size="80" font-weight="500" fill="#f5f5f3" letter-spacing="-3">Pre-seed to Series A.</text>
+  <text x="80" y="420" font-family="'Inter Tight', ui-sans-serif, system-ui, sans-serif" font-size="80" font-weight="500" fill="#f5f5f3" letter-spacing="-3">AI · Space · Fintech.</text>
+
+  <text x="80" y="490" font-family="'Inter Tight', ui-sans-serif, system-ui, sans-serif" font-size="26" fill="#a3a3a0" letter-spacing="-0.5">Pitch in one paragraph. First reply under 72h.</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#6b6b68">
+    <text x="80" y="580">karlqu.biz@gmail.com</text>
+    <text x="1120" y="580" text-anchor="end">San Francisco · 2026</text>
+  </g>
+</svg>

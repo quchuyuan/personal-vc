@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+<meta name="color-scheme" content="dark light" />
+<meta name="robots" content="noindex" />
+<title>404 — Karl Qu</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a' rx='4'/%3E%3Ctext x='16' y='21' font-family='ui-monospace,monospace' font-size='13' font-weight='500' fill='%23f5f5f3' text-anchor='middle'%3EKQ%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --bg: #0a0a0a; --fg: #f5f5f3; --fg-dim: #a3a3a0; --fg-muted: #6b6b68;
+    --line: #1f1f1f; --line-strong: #2a2a2a;
+    --accent: #f5f5f3; --accent-ink: #0a0a0a;
+  }
+  html[data-theme="light"] {
+    --bg: #f7f7f5; --fg: #0a0a0a; --fg-dim: #525251; --fg-muted: #8a8a87;
+    --line: #e6e6e2; --line-strong: #d4d4cf;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); min-height: 100vh; }
+  body {
+    font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 560px; text-align: center; }
+  .code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--fg-muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  h1 {
+    font-size: clamp(48px, 10vw, 120px);
+    line-height: 0.95; letter-spacing: -0.04em; font-weight: 500;
+    margin: 0 0 24px;
+  }
+  h1 em { color: var(--fg-muted); font-style: italic; font-weight: 400; }
+  p { color: var(--fg-dim); max-width: 44ch; margin: 0 auto 32px; font-size: 17px; }
+  .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 18px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    border: 1px solid var(--line-strong); border-radius: 2px;
+    color: var(--fg); background: transparent;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .btn:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn.primary:hover { filter: brightness(1.05); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">Error 404 — page not found</div>
+    <h1>Nothing <em>here</em> yet.</h1>
+    <p>The page you're looking for isn't published — or the URL is wrong. Either way, the front door still works.</p>
+    <div class="actions">
+      <a href="/" class="btn primary">← Home</a>
+      <a href="/#notes" class="btn">All notes</a>
+      <a href="/#contact" class="btn">Get in touch</a>
+    </div>
+  </div>
+</body>
+</html>

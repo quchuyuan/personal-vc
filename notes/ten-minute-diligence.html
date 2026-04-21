@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+<meta name="color-scheme" content="dark light" />
+
+<title>The 10-minute diligence — Karl Qu</title>
+<meta name="description" content="How I filter 50 AI decks a week without losing my mind." />
+<link rel="canonical" href="https://karlqu.com/notes/ten-minute-diligence" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karlqu.com/notes/ten-minute-diligence" />
+<meta property="og:title" content="The 10-minute diligence — Karl Qu" />
+<meta property="og:description" content="How I filter 50 AI decks a week without losing my mind." />
+<meta property="og:image" content="https://karlqu.com/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a' rx='4'/%3E%3Ctext x='16' y='21' font-family='ui-monospace,monospace' font-size='13' font-weight='500' fill='%23f5f5f3' text-anchor='middle'%3EKQ%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --bg: #0a0a0a; --bg-elev: #111111;
+    --fg: #f5f5f3; --fg-dim: #a3a3a0; --fg-muted: #6b6b68;
+    --line: #1f1f1f; --line-strong: #2a2a2a;
+    --accent: #f5f5f3; --accent-ink: #0a0a0a;
+    --maxw: 700px;
+  }
+  html[data-theme="light"] {
+    --bg: #f7f7f5; --bg-elev: #ffffff;
+    --fg: #0a0a0a; --fg-dim: #525251; --fg-muted: #8a8a87;
+    --line: #e6e6e2; --line-strong: #d4d4cf;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    font-size: 17px;
+    letter-spacing: -0.005em;
+  }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent); }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+  :focus { outline: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: color-mix(in oklab, var(--bg) 78%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 56px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  }
+  .topbar a { text-decoration: none; color: var(--fg-dim); transition: color 0.2s; }
+  .topbar a:hover { color: var(--fg); }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); }
+  .monogram {
+    width: 24px; height: 24px; border: 1px solid var(--line-strong);
+    display: grid; place-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    background: var(--bg-elev); border-radius: 2px;
+  }
+
+  article {
+    max-width: var(--maxw); margin: 0 auto; padding: 64px 24px 120px;
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 16px;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .meta .kind {
+    padding: 3px 8px; border: 1px solid var(--line-strong); border-radius: 2px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1; letter-spacing: -0.03em; font-weight: 500;
+    margin: 0 0 12px;
+  }
+  .subtitle {
+    font-size: 20px; color: var(--fg-dim);
+    margin: 0 0 40px; letter-spacing: -0.01em;
+  }
+
+  .content h2 {
+    font-size: 24px; letter-spacing: -0.02em; font-weight: 500;
+    margin: 48px 0 16px;
+  }
+  .content h3 {
+    font-size: 18px; letter-spacing: -0.01em; font-weight: 500;
+    margin: 32px 0 12px;
+  }
+  .content p { margin: 0 0 20px; color: var(--fg); }
+  .content ul, .content ol { padding-left: 24px; margin: 0 0 20px; }
+  .content li { margin: 6px 0; }
+  .content blockquote {
+    margin: 24px 0; padding: 4px 0 4px 20px;
+    border-left: 2px solid var(--accent);
+    color: var(--fg-dim); font-style: italic;
+  }
+  .content code {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.9em;
+    background: var(--bg-elev); padding: 2px 6px; border-radius: 2px;
+    border: 1px solid var(--line);
+  }
+  .content hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+
+  .footer-nav {
+    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--fg-muted);
+  }
+  .footer-nav a { color: var(--fg-dim); text-decoration: none; }
+  .footer-nav a:hover { color: var(--fg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="brand">
+      <span class="monogram" aria-hidden="true">KQ</span>
+      <span>Karl Qu</span>
+    </a>
+    <a href="/#notes">← All notes</a>
+  </div>
+</header>
+
+<article>
+  <div class="meta">
+    <span>2026 · 03</span>
+    <span class="kind">Essay</span>
+    <span>· 6 min read</span>
+  </div>
+  <h1>The 10-minute diligence</h1>
+  <p class="subtitle">How I filter 50 AI decks a week without losing my mind.</p>
+
+  <div class="content">
+    <p>Roughly 50 pitch decks land in my inbox every week. If I read each one front-to-back, my evenings are gone and my signal is no better than a coin flip. So over the last year I've ground the first pass down to about ten minutes. Here's what I look at, in order.</p>
+
+    <h2>Minute 0–2: does the thing exist?</h2>
+    <p>Before I open the deck, I look for something I can touch. A live demo, a staging URL, a video of the product running against real data — any of these beats the best-designed slide. If there is nothing to click, I note that and keep going, but my prior drops considerably.</p>
+
+    <h2>Minute 2–5: the one metric</h2>
+    <p>I scan the deck for a single number that proves something non-obvious. Retention curves for consumer, a signed LOI for enterprise, an inference-cost delta for infra, a "we ship 3× as many parts per month" for hardware. I am looking for proof that the founder has compressed a loop that used to be slow — not just traction.</p>
+
+    <blockquote>If the entire deck's strongest claim is a TAM slide, I close the tab.</blockquote>
+
+    <h2>Minute 5–8: why this team, why now</h2>
+    <p>I skim the team slide looking for one sentence I couldn't have guessed. "Built X at Y" is table stakes. What I want is: this person spent five years being annoyed by a specific problem, and now the tools exist to fix it. Timing answers are usually either <em>a cost curve moved</em>, <em>a regulation changed</em>, or <em>a model capability crossed a threshold</em>. Anything vaguer than those three is a yellow flag.</p>
+
+    <h2>Minute 8–10: the reply</h2>
+    <p>By minute eight I know whether I want a call. If yes, I write a two-sentence reply with one sharp question. If no, I still write a two-sentence reply — a real one, with the actual reason. The founders remember, and six months later a "no" turns into a "yes, with this new wedge" more often than you'd think.</p>
+
+    <hr/>
+
+    <p>Most of what gets filtered out here isn't bad work — it's work that hasn't yet earned the 45-minute call. The goal of the ten-minute pass is to find the 2–3 decks a week that deserve one, and to give everyone else a clean, fast answer.</p>
+  </div>
+
+  <nav class="footer-nav">
+    <a href="/#notes">← All notes</a>
+    <span>karlqu.biz@gmail.com</span>
+  </nav>
+</article>
+
+</body>
+</html>

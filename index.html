@@ -3,11 +3,57 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Karl Qu — VC Scout</title>
-<meta name="description" content="Karl Qu — VC scout backing pre-seed to Series A founders in AI, space, and fintech across the US." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+<meta name="color-scheme" content="dark light" />
+<meta name="author" content="Karl Qu" />
+
+<title>Karl Qu — VC Scout · AI · Space · Fintech</title>
+<meta name="description" content="Karl Qu — VC scout backing pre-seed to Series A founders in AI, space, and fintech across the US. Based in San Francisco." />
+
+<!-- TODO: replace https://karlqu.com with your production domain (find & replace in this file). -->
+<link rel="canonical" href="https://karlqu.com/" />
+
+<!-- Open Graph (Facebook, LinkedIn, Slack, iMessage) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://karlqu.com/" />
+<meta property="og:title" content="Karl Qu — VC Scout" />
+<meta property="og:description" content="VC scout backing pre-seed to Series A founders in AI, space, and fintech. Pitch in one paragraph — first reply under 72h." />
+<meta property="og:image" content="https://karlqu.com/og.svg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Karl Qu" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Karl Qu — VC Scout" />
+<meta name="twitter:description" content="VC scout backing pre-seed to Series A founders in AI, space, and fintech." />
+<meta name="twitter:image" content="https://karlqu.com/og.svg" />
+
+<!-- Inline SVG favicon, no extra request -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a' rx='4'/%3E%3Ctext x='16' y='21' font-family='ui-monospace,monospace' font-size='13' font-weight='500' fill='%23f5f5f3' text-anchor='middle'%3EKQ%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<!-- JSON-LD: Person schema for Google / AI crawlers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karl Qu",
+  "url": "https://karlqu.com",
+  "email": "mailto:karlqu.biz@gmail.com",
+  "jobTitle": "VC Scout",
+  "worksFor": { "@type": "Organization", "name": "Google" },
+  "address": { "@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US" },
+  "knowsAbout": ["Venture Capital", "Artificial Intelligence", "Space Technology", "Fintech"]
+}
+</script>
 <style>
   :root {
     --bg: #0a0a0a;
@@ -588,9 +634,79 @@
     .nav { display: none; }
     .vc-wrap { padding: 28px; }
   }
+
+  /* ---- Accessibility: skip link ---- */
+  .skip-link {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--accent); color: var(--accent-ink);
+    padding: 10px 14px; border-radius: var(--radius);
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 12px; outline: 2px solid var(--accent); }
+
+  /* ---- Accessibility: focus rings ---- */
+  :focus { outline: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  textarea:focus-visible, select:focus-visible, .chip:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+  .form-row input:focus-visible, .form-row textarea:focus-visible {
+    outline: none;
+    background: color-mix(in oklab, var(--bg) 75%, var(--accent));
+  }
+
+  /* ---- Form validation ---- */
+  .form-row.invalid { background: color-mix(in oklab, var(--bg-elev) 85%, oklch(0.7 0.18 25)); }
+  .form-row.invalid label { color: oklch(0.75 0.16 25); }
+  .form-error {
+    padding: 0 16px 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: oklch(0.75 0.18 25);
+    display: none;
+  }
+  .form-row.invalid + .form-error { display: block; }
+
+  /* ---- Notes: draft (placeholder) variant ---- */
+  .note.draft {
+    cursor: default;
+    opacity: 0.55;
+  }
+  .note.draft:hover { padding-left: 0; padding-right: 0; }
+  .note.draft .kind {
+    color: oklch(0.7 0.14 75);
+    border-color: color-mix(in oklab, oklch(0.7 0.14 75) 40%, var(--line-strong));
+  }
+  .notes-empty {
+    padding: 40px 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--fg-muted);
+    text-align: center;
+  }
+
+  /* ---- Respect prefers-reduced-motion ---- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-stagger, .reveal-stagger > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .dot { animation: none; }
+    .caret { animation: none; }
+  }
 </style>
 </head>
 <body>
+
+<a href="#top" class="skip-link">Skip to content</a>
 
 <!-- ============ TOPBAR ============ -->
 <header class="topbar">
@@ -847,32 +963,70 @@
         <span class="rule"></span>
       </div>
 
-      <div class="notes reveal-stagger">
-        <a class="note" href="#">
-          <span class="date">2026 · 03</span>
-          <span class="title">The 10-minute diligence — <span>how I filter 50 AI decks a week without losing my mind.</span></span>
-          <span class="kind">Essay</span>
-        </a>
-        <a class="note" href="#">
-          <span class="date">2026 · 02</span>
-          <span class="title">Space is cheap again — <span>why launch-cost compression is creating a second Cambrian moment.</span></span>
-          <span class="kind">Essay</span>
-        </a>
-        <a class="note" href="#">
-          <span class="date">2026 · 01</span>
-          <span class="title">What I got wrong in 2025 — <span>three calls I missed, two I got lucky on, and one I still don't understand.</span></span>
-          <span class="kind">Review</span>
-        </a>
-        <a class="note" href="#">
-          <span class="date">2025 · 11</span>
-          <span class="title">A scout's contract, explained — <span>plain-English walkthrough of the standard scout program.</span></span>
-          <span class="kind">Guide</span>
-        </a>
-        <a class="note" href="#">
-          <span class="date">2025 · 09</span>
-          <span class="title">Fintech's boring middle — <span>the unsexy infra layer where I keep finding the best unit economics.</span></span>
-          <span class="kind">Thesis</span>
-        </a>
+      <!--
+        ================================================================
+        TO PUBLISH A NEW NOTE:
+          1. Copy notes/_template.html to notes/<your-slug>.html and edit it
+          2. Add a new entry to the top of the JSON array below
+          3. Commit & push — Vercel redeploys on push
+        Fields:
+          date    — YYYY-MM (shown as "2026 · 03")
+          title   — headline
+          excerpt — one-line teaser
+          kind    — Essay | Review | Guide | Thesis | Note
+          slug    — filename in /notes/ (without .html, matches step 1)
+          status  — "published" (linked) | "draft" (grey, unclickable)
+        ================================================================
+      -->
+      <script type="application/json" id="notes-data">
+      [
+        {
+          "date": "2026-03",
+          "title": "The 10-minute diligence",
+          "excerpt": "how I filter 50 AI decks a week without losing my mind.",
+          "kind": "Essay",
+          "slug": "ten-minute-diligence",
+          "status": "published"
+        },
+        {
+          "date": "2026-02",
+          "title": "Space is cheap again",
+          "excerpt": "why launch-cost compression is creating a second Cambrian moment.",
+          "kind": "Essay",
+          "slug": "space-is-cheap-again",
+          "status": "draft"
+        },
+        {
+          "date": "2026-01",
+          "title": "What I got wrong in 2025",
+          "excerpt": "three calls I missed, two I got lucky on, and one I still don't understand.",
+          "kind": "Review",
+          "slug": "what-i-got-wrong-in-2025",
+          "status": "draft"
+        },
+        {
+          "date": "2025-11",
+          "title": "A scout's contract, explained",
+          "excerpt": "plain-English walkthrough of the standard scout program.",
+          "kind": "Guide",
+          "slug": "scouts-contract-explained",
+          "status": "draft"
+        },
+        {
+          "date": "2025-09",
+          "title": "Fintech's boring middle",
+          "excerpt": "the unsexy infra layer where I keep finding the best unit economics.",
+          "kind": "Thesis",
+          "slug": "fintechs-boring-middle",
+          "status": "draft"
+        }
+      ]
+      </script>
+
+      <div class="notes reveal-stagger" id="notesList" aria-live="polite">
+        <noscript>
+          <div class="notes-empty">Enable JavaScript to see the notes list, or browse <code>/notes/</code> directly.</div>
+        </noscript>
       </div>
     </div>
   </section>
@@ -888,10 +1042,10 @@
 
       <div class="contact-grid">
         <div class="reveal">
-          <div class="audience-switch" id="audienceSwitch" role="tablist">
-            <button data-aud="founders" role="tab">I'm a founder</button>
-            <button data-aud="vcs" role="tab">I'm a VC</button>
-            <button data-aud="both" role="tab">Just saying hi</button>
+          <div class="audience-switch" id="audienceSwitch" role="group" aria-label="Audience">
+            <button type="button" data-aud="founders" aria-pressed="false">I'm a founder</button>
+            <button type="button" data-aud="vcs" aria-pressed="false">I'm a VC</button>
+            <button type="button" data-aud="both" aria-pressed="false">Just saying hi</button>
           </div>
 
           <h3 class="contact-head" data-for="founders">
@@ -910,54 +1064,62 @@
             we're each seeing in AI, space, and fintech.
           </p>
 
-          <div class="contact-email" id="emailCopy" title="Click to copy">
-            <span>✉</span>
+          <button type="button" class="contact-email" id="emailCopy" title="Click to copy email">
+            <span aria-hidden="true">✉</span>
             <span id="emailText">karlqu.biz@gmail.com</span>
             <span class="copy-label" id="copyLabel">— click to copy</span>
-          </div>
+          </button>
           <div style="margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-muted);">
             Based in San Francisco · Pacific Time · Reply within 72h
           </div>
         </div>
 
-        <form class="form reveal" id="contactForm">
+        <form class="form reveal" id="contactForm" novalidate>
           <div class="form-row">
-            <label>Name</label>
-            <input required name="name" placeholder="Ada Lovelace" />
+            <label for="f-name">Name</label>
+            <input required id="f-name" name="name" placeholder="Ada Lovelace" autocomplete="name" />
           </div>
+          <div class="form-error" id="err-name">Tell me what to call you.</div>
+
           <div class="form-row">
-            <label>Email</label>
-            <input required type="email" name="email" placeholder="you@company.com" />
+            <label for="f-email">Email</label>
+            <input required type="email" id="f-email" name="email" placeholder="you@company.com" autocomplete="email" inputmode="email" />
           </div>
+          <div class="form-error" id="err-email">That doesn't look like a valid email.</div>
+
           <div class="form-row">
-            <label>Company</label>
-            <input name="company" placeholder="Your startup or fund" />
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" placeholder="Your startup or fund" autocomplete="organization" />
           </div>
+
           <div class="form-row chips">
-            <label>I am a</label>
-            <div class="chip-row" id="chipRow">
-              <span class="chip on" data-val="founder">founder</span>
-              <span class="chip" data-val="vc">investor / VC</span>
-              <span class="chip" data-val="angel">angel / LP</span>
-              <span class="chip" data-val="other">other</span>
+            <label id="lbl-role">I am a</label>
+            <div class="chip-row" id="chipRow" role="radiogroup" aria-labelledby="lbl-role">
+              <span class="chip on" role="radio" tabindex="0" aria-checked="true" data-val="founder">founder</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="vc">investor / VC</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="angel">angel / LP</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="other">other</span>
             </div>
           </div>
           <div class="form-row chips">
-            <label>Sector</label>
-            <div class="chip-row" id="chipSector">
-              <span class="chip" data-val="ai">AI</span>
-              <span class="chip" data-val="space">space</span>
-              <span class="chip" data-val="fintech">fintech</span>
-              <span class="chip" data-val="other">other</span>
+            <label id="lbl-sector">Sector</label>
+            <div class="chip-row" id="chipSector" role="radiogroup" aria-labelledby="lbl-sector">
+              <span class="chip" role="radio" tabindex="0" aria-checked="false" data-val="ai">AI</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="space">space</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="fintech">fintech</span>
+              <span class="chip" role="radio" tabindex="-1" aria-checked="false" data-val="other">other</span>
             </div>
           </div>
+
           <div class="form-row">
-            <label>Pitch</label>
-            <textarea required name="pitch" placeholder="One paragraph: what, for whom, why now. Add a link if you have one."></textarea>
+            <label for="f-pitch">Pitch</label>
+            <textarea required id="f-pitch" name="pitch" placeholder="One paragraph: what, for whom, why now. Add a link if you have one."></textarea>
           </div>
+          <div class="form-error" id="err-pitch">A paragraph is enough — just tell me the gist.</div>
+
           <div class="form-actions">
             <span class="form-note" id="formNote">↵ Submits to karlqu.biz@gmail.com</span>
-            <button type="submit" class="form-submit">Send <span>→</span></button>
+            <button type="submit" class="form-submit">Send <span aria-hidden="true">→</span></button>
           </div>
         </form>
       </div>
@@ -990,23 +1152,30 @@
     density: html.getAttribute('data-density') || 'roomy',
     audience: html.getAttribute('data-audience') || 'vcs',
   };
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ----- Scroll reveals -----
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  // ----- Scroll reveals (skip if reduced motion) -----
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in'));
+  }
 
   // ----- Audience switch -----
   const aSwitch = document.getElementById('audienceSwitch');
   function paintAudienceSwitch() {
     aSwitch.querySelectorAll('button').forEach(b => {
-      b.classList.toggle('on', b.dataset.aud === state.audience);
+      const on = b.dataset.aud === state.audience;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
   }
   paintAudienceSwitch();
@@ -1016,14 +1185,42 @@
     html.setAttribute('data-audience', state.audience);
     paintAudienceSwitch();
   });
+  aSwitch.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const btns = [...aSwitch.querySelectorAll('button')];
+    const i = btns.indexOf(document.activeElement);
+    if (i < 0) return;
+    const next = btns[(i + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length];
+    next.focus(); next.click();
+    e.preventDefault();
+  });
 
-  // ----- Form chips (single select) -----
+  // ----- Form chips (single select, keyboard-friendly radio group) -----
   function bindChips(id) {
     const row = document.getElementById(id);
+    function select(chip) {
+      row.querySelectorAll('.chip').forEach(x => {
+        const on = x === chip;
+        x.classList.toggle('on', on);
+        x.setAttribute('aria-checked', on ? 'true' : 'false');
+        x.setAttribute('tabindex', on ? '0' : '-1');
+      });
+    }
     row.addEventListener('click', e => {
       const c = e.target.closest('.chip'); if (!c) return;
-      row.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
-      c.classList.add('on');
+      select(c); c.focus();
+    });
+    row.addEventListener('keydown', e => {
+      const chips = [...row.querySelectorAll('.chip')];
+      const i = chips.indexOf(document.activeElement);
+      if (i < 0) return;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        const p = chips[(i - 1 + chips.length) % chips.length]; select(p); p.focus(); e.preventDefault();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        const n = chips[(i + 1) % chips.length]; select(n); n.focus(); e.preventDefault();
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        select(chips[i]); e.preventDefault();
+      }
     });
   }
   bindChips('chipRow');
@@ -1031,31 +1228,129 @@
 
   // ----- Email copy -----
   const emailBox = document.getElementById('emailCopy');
+  const EMAIL = 'karlqu.biz@gmail.com';
   emailBox.addEventListener('click', async () => {
+    const lbl = document.getElementById('copyLabel');
+    const reset = () => setTimeout(() => lbl.textContent = '— click to copy', 1600);
     try {
-      await navigator.clipboard.writeText('karlqu.biz@gmail.com');
-      const lbl = document.getElementById('copyLabel');
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(EMAIL);
+      } else {
+        // Fallback for non-HTTPS or older browsers
+        const ta = document.createElement('textarea');
+        ta.value = EMAIL; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); ta.remove();
+      }
       lbl.textContent = '— copied ✓';
-      setTimeout(() => lbl.textContent = '— click to copy', 1600);
-    } catch (e) {}
+    } catch (err) {
+      lbl.textContent = '— copy failed, select manually';
+    }
+    reset();
   });
 
-  // ----- Form submit (mailto fallthrough) -----
+  // ----- Form validation + submit -----
   const form = document.getElementById('contactForm');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function setInvalid(input, errId, msg) {
+    const row = input.closest('.form-row');
+    row.classList.add('invalid');
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', errId);
+    if (msg) document.getElementById(errId).textContent = msg;
+  }
+  function clearInvalid(input) {
+    const row = input.closest('.form-row');
+    row.classList.remove('invalid');
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+  }
+  ['f-name', 'f-email', 'f-pitch'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', () => clearInvalid(el));
+  });
+
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const subject = encodeURIComponent('Pitch: ' + (form.name.value || 'Hello') + (form.company.value ? ' @ ' + form.company.value : ''));
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const pitch = form.pitch.value.trim();
+    let firstBad = null;
+
+    if (!name) { setInvalid(form.name, 'err-name'); firstBad ||= form.name; }
+    if (!emailRe.test(email)) {
+      setInvalid(form.email, 'err-email',
+        !email ? 'I need an email to reply to.' : "That doesn't look like a valid email.");
+      firstBad ||= form.email;
+    }
+    if (pitch.length < 20) {
+      setInvalid(form.pitch, 'err-pitch',
+        !pitch ? 'A paragraph is enough — just tell me the gist.' : 'A bit more context, please (20+ chars).');
+      firstBad ||= form.pitch;
+    }
+    if (firstBad) { firstBad.focus(); return; }
+
+    const subject = encodeURIComponent('Pitch: ' + name + (form.company.value ? ' @ ' + form.company.value : ''));
     const body = encodeURIComponent(
-      'Name: ' + form.name.value + '\n' +
-      'Email: ' + form.email.value + '\n' +
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
       'Company: ' + form.company.value + '\n' +
       'Role: ' + (document.querySelector('#chipRow .chip.on')?.dataset.val || '-') + '\n' +
       'Sector: ' + (document.querySelector('#chipSector .chip.on')?.dataset.val || '-') + '\n\n' +
-      form.pitch.value
+      pitch
     );
-    window.location.href = 'mailto:karlqu.biz@gmail.com?subject=' + subject + '&body=' + body;
-    form.innerHTML = '<div class="form-success"><div class="check">✓</div><div style="font-size: 16px;">Thanks — opening your mail client.</div><div style="color: var(--fg-muted); font-family: JetBrains Mono, monospace; font-size: 11px; margin-top: 8px;">Expect a reply within 72h.</div></div>';
+    window.location.href = 'mailto:' + EMAIL + '?subject=' + subject + '&body=' + body;
+    form.innerHTML = '<div class="form-success" role="status"><div class="check">✓</div><div style="font-size: 16px;">Thanks — opening your mail client.</div><div style="color: var(--fg-muted); font-family: JetBrains Mono, monospace; font-size: 11px; margin-top: 8px;">Expect a reply within 72h.</div></div>';
   });
+
+  // ----- Notes: render from inline JSON -----
+  (function renderNotes() {
+    const list = document.getElementById('notesList');
+    const data = document.getElementById('notes-data');
+    if (!list || !data) return;
+    let notes;
+    try { notes = JSON.parse(data.textContent); } catch { return; }
+    // sort newest first
+    notes.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+    const frag = document.createDocumentFragment();
+    notes.forEach(n => {
+      const isPub = n.status === 'published';
+      const el = document.createElement(isPub ? 'a' : 'div');
+      el.className = 'note' + (isPub ? '' : ' draft');
+      if (isPub) el.href = '/notes/' + n.slug;
+
+      const [y, m] = (n.date || '').split('-');
+      const dateStr = y && m ? `${y} · ${m}` : (n.date || '');
+
+      const dateEl = document.createElement('span');
+      dateEl.className = 'date'; dateEl.textContent = dateStr;
+
+      const titleEl = document.createElement('span');
+      titleEl.className = 'title';
+      const titleText = document.createTextNode(n.title + ' — ');
+      const excerptEl = document.createElement('span');
+      excerptEl.textContent = n.excerpt || '';
+      titleEl.appendChild(titleText); titleEl.appendChild(excerptEl);
+
+      const kindEl = document.createElement('span');
+      kindEl.className = 'kind';
+      kindEl.textContent = isPub ? (n.kind || 'Note') : 'Draft';
+
+      el.appendChild(dateEl); el.appendChild(titleEl); el.appendChild(kindEl);
+      frag.appendChild(el);
+    });
+
+    // Preserve <noscript> children (won't run with JS on, but harmless)
+    list.appendChild(frag);
+    // Re-trigger stagger animation now that children are present
+    if (!reduceMotion) {
+      requestAnimationFrame(() => list.classList.add('in'));
+    } else {
+      list.classList.add('in');
+    }
+  })();
 })();
 </script>
 
